@@ -1,0 +1,365 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Modifier un utilisateur{% endblock %}
+
+{% block body %}
+    
+    
+
+
+
+
+
+
+
+
+
+
+						<div class="card">
+							
+
+							<div class="card-body">
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main content -->
+ <div class="content-wrapper">
+
+     {{ form_start(userForm, {'attr': {'novalidate': 'novalidate'}}) }}
+ 
+
+
+
+    <!-- Content area -->
+
+
+
+
+
+
+
+
+
+    <div class="content">
+        <div class="mb-3">
+                            <div class="page-header page-header-dark" style="border: 1px solid #ddd; border-bottom: 0;">
+                                <div class="page-header-content header-elements-inline">
+                                    <div class="page-title">
+                                        <h5>
+                                            <i class="icon-arrow-left52 mr-2"></i>
+                                            <span class="font-weight-semibold">Modifier un utilisateur</span> 
+                                            <small class="d-block opacity-75">    </small>
+                                        </h5>
+                                    </div>
+
+                                    <div class="header-elements d-flex align-items-center">
+                                        <button type="submit" class="btn btn-secondary"><i class="icon-diff-added">  VALIDER</i></button>
+                                    </div>
+                                </div>
+
+                                <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+                                    <div class="d-flex">
+                                        <div class="breadcrumb">
+                                            <a href="{{ path('home')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                                            <a href="" class="breadcrumb-item">Administrateur</a>
+                                            <span class="breadcrumb-item active">Add</span>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="header-elements d-none">
+                                        <div class="breadcrumb justify-content-center">
+                                        
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="content">
+                <div class="card">
+        
+                    <div class="card-body">
+                
+
+                
+                        <form action="#">
+                            <fieldset class="mb-3">
+                        <legend class="text-uppercase font-size-sm font-weight-bold">Formulaire</legend>
+
+                    
+                    
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Nom d'utilisateur</label>
+                            <div class="col-md-10">
+                                {{ form_widget(userForm.username, {'label': "Nom d'utilisateur" ,'attr':{'placeholder': 'Mot de passe !'}}) }}
+                               
+                            </div>
+                        </div>  
+
+
+
+
+                            <div class="form-group row">
+                            <label class="col-form-label col-md-2">Adresse email</label>
+                            <div class="col-md-10">
+                              {{ form_widget(userForm.email, {'label': 'Adresse email' ,'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+                                
+                            </div>
+                        </div>
+
+
+
+                        
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2"></label>
+                            <div class="col-md-10">
+                             {{ form_row(userForm.roles, {'label': 'Rôles' ,'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+                            </div>
+                        </div>
+
+
+
+
+            
+
+
+                            
+                        
+                        
+                       
+
+
+
+                      
+
+                    
+
+                    </fieldset>
+            
+                    
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Valider <i class="icon-paperplane ml-2"></i></button>
+                    
+                    </div>
+                        {{ form_end(userForm) }}
+                </form>
+            </div>
+        </div>
+        <!-- /form inputs -->
+
+
+    </div>
+    <!-- /content area -->
+
+</div>
+<!-- /main content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
+
+									</div>
+
+									
+						</div>
+
+
+ <div class="card">                    
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main content -->
+ <div class="content-wrapper">
+
+     {{ form_start(formpassword, {'attr': {'novalidate': 'novalidate'}}) }}
+ 
+
+
+
+    <!-- Content area -->
+
+
+
+
+
+
+
+
+
+    <div class="content">
+        <div class="mb-3">
+                            
+
+
+
+
+
+
+
+            <div class="content">
+                <div class="card">
+        
+                    <div class="card-body">
+                
+
+                
+                        <form action="#">
+                            <fieldset class="mb-3">
+                        <legend class="text-uppercase font-size-sm font-weight-bold">Formulaire</legend>
+
+                    
+                    
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Nouveau mot de passe</label>
+                            <div class="col-md-10">
+                               {{ form_widget(formpassword.password, {'label': 'nouveau Mot de passe' ,'attr':{'placeholder': 'Mot de passe !'}}) }}
+                               
+                            </div>
+                        </div>  
+
+
+
+
+                            <div class="form-group row">
+                            <label class="col-form-label col-md-2">Confirmation de nouveau mot de passe</label>
+                            <div class="col-md-10">
+                              {{ form_widget(formpassword.confirm_password, {'label': 'Confirmation du nouveau mot de passe' ,'attr':{'placeholder': 'Répétez votre mot de passe'}}) }}
+                                
+                            </div>
+                        </div>
+
+
+
+                        
+                       
+
+
+
+
+            
+
+
+                            
+                        
+                        
+                       
+
+
+
+                      
+
+                    
+
+                    </fieldset>
+            
+                    
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Valider <i class="icon-paperplane ml-2"></i></button>
+                    
+                    </div>
+                        {{ form_end(formpassword) }}
+                </form>
+            </div>
+        </div>
+        <!-- /form inputs -->
+
+
+    </div>
+    <!-- /content area -->
+
+</div>
+<!-- /main content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends 'template.html.twig' %}
+
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+
+
+      
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+						
+                                            
+
+
+                                    
+      
+
+
+                   
+
+       
+
+
+
+
+
+
+
+
+
+
+<div class="content">
+    <div class="card">
+
+<div class="content">
+        <div class="mb-3">
+                            <div class="page-header page-header-dark" style="border: 1px solid #ddd; border-bottom: 0;">
+                                <div class="page-header-content header-elements-inline">
+                                    <div class="page-title">
+                                        <h5>
+                                            <i class="icon-arrow-left52 mr-2"></i>
+                                            <span class="font-weight-semibold">Liste des Utilisateurs</span> 
+                                            <small class="d-block opacity-75">    </small>
+                                        </h5>
+                                    </div>
+
+                                    <div class="header-elements d-flex align-items-center">
+                                        <a  href="{{ path('admin_add') }}"  class="btn btn-secondary"><i class="icon-diff-added">  AJOUTER</i></a>
+                                    </div>
+                                </div>
+
+                                <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+                                    <div class="d-flex">
+                                        <div class="breadcrumb">
+                                            <a href="{{ path('home')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                                            <a href="{{ path('admin_utilisateurs')}}" class="breadcrumb-item">Utilisateur</a>
+                                            <span class="breadcrumb-item active">Liste</span>
+                                        </div>
+
+                                        
+                                    </div>
+
+                                    <div class="header-elements d-none">
+                                        <div class="breadcrumb justify-content-center">
+                                        
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+</div>
+
+           <div class="card">
+        
+            <div class="card-body">
+                
+
+        <div class="datatable-scroll">
+            <table class="table datatable-basic dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+   <thead>
+    <tr role="row">
+        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="First Name: activate to sort column descending">
+          ID      </th>
+        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Last Name: activate to sort column ascending">
+        Email      </th>
+        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Job Title: activate to sort column ascending">
+            Rôles
+        </th>
+        
+        <th class="text-center sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 100px;">
+            Actions
+        </th>
+    </tr>
+    </thead>
+<tbody>{% for user in users %}
+<tr role="row" class="even">
+        <td class="sorting_1">{{ user.id }}</td>
+        <td><a href="#">{{ user.email }}</a></td>
+      
+        <td><span class="badge badge-info"> {% for role in user.roles %}
+                            {% if role == "ROLE_USER" %}
+                                Utilisateur
+                    
+                            {% elseif role == "ROLE_ADMIN" %}
+                                Administrateur
+                            {% endif %}
+                        {% endfor %}</span></td>
+    
+        <td class="text-center">
+        <a  class="btn btn-outline-primary" href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}"> <i class="icon-compose"><b>Modifier</b></i></a>
+        <a class="btn btn-outline-danger"  href="{{ path('admin_delete', {'id': user.id}) }}">  <i class="icon-trash-alt"></i><b>Supprimer</b></a>
+        </td>
+    </div>
+    </tr>{% endfor %}
+    </tbody>
+     </table>
+
+
+
+</div>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+     
+
